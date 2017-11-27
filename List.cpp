@@ -5,6 +5,26 @@
 
 using namespace std;
 
+List::~List() {
+     	Link * node = head;
+	Link * temp = node->next;
+	if (head == nullptr) {
+		return;
+	}
+	if (node->next == nullptr) {
+		delete node;
+		return;
+	}
+	while (temp->next != nullptr) {
+		delete node;
+		node = temp;
+		temp = temp->next;
+	}
+	delete node;
+	delete temp;
+
+}
+
 bool List::empty() const {
 	if (head == nullptr) {
 		return true;

@@ -7,7 +7,7 @@ class List {
 
 public:
 	List(Link * head = nullptr) : head(head) {}
-	~List() {}
+	~List();
 	bool empty() const;
 	int size() const;
 	Iterator begin() const;
